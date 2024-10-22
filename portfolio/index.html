@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Petrona:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1vh;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Petrona',  serif sans-serif;
+
+        }
+        body{
+            background: linear-gradient(45deg, #f31820, #f76e48, #f098d7, #e0e254, #f8a1a3);
+            /* background-size: -100%; */
+            /* background: linear-gradient(to bottom right,rgb(129, 231, 129),rgb(20, 0, 0)40%,rgb(201, 198, 198)); */
+            background-size: 200%;
+    
+            animation: gradient 4s ease infinite;
+        }
+        
+        @keyframes gradient{
+            0%{
+                background-position: 50% 100%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 60% 40%;
+            }
+        }
+        .top-container {
+            height: 100vh;
+            /* width: 100vw;  */
+            display: grid;
+            grid-template-columns: repeat(9,12%);
+            grid-template-rows: repeat(13, auto);
+            /* flex-direction: column;
+            justify-content: center; */
+            /* align-items: center; */
+            justify-items: center;
+            align-items: center;
+            font-size: 3rem;
+            background: linear-gradient(to top right, rgb(17, 168, 214), lightblue 50%, white);
+            /* background-size: 400% 400%; */ 
+            box-sizing: border-box;  
+            animation: translate 3s ease ;
+            opacity: 0.9;
+            color: black;
+        }
+        .top-container img{
+            
+            width: 60%;
+            height: 50%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .intro:nth-child(1){
+            grid-area: 6/2/9/5;
+            line-height: 5rem;
+        }
+        .intro:nth-child(2)
+        {
+            grid-area: 1/6/2/9;
+        }
+        .intro:nth-child(3)
+        {
+            grid-area: 6/6/9/9;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .mar-bor{
+            border-radius: 5rem;
+            margin: 1rem 4rem ;
+        }
+        /* @keyframes slide{
+            to{
+                transform: s(0,0);
+            }
+            from{
+                transform: slide(2,0.5);
+            }
+            
+        } */
+        @keyframes translate {
+            0% {
+                transform: translateY(-100%)
+            }
+
+            /* 50% { background:linear-gradient(to top right,rgb(230, 90, 90)),white; } */
+            100% {
+                transform: translateY(0);
+            }
+        }
+        .about-container {
+            display: grid;
+            height: 100vh;
+            grid-template-columns: repeat(8, 15%);
+            grid-template-rows: repeat(10, auto);
+            background: linear-gradient(to top right,rgb(49, 138, 145),rgb(201, 232, 236)50%,rgb(190, 248, 245));
+            opacity:0.9;
+            color: black;
+
+        }
+        .about{
+            font-size: 1.5rem;
+            transform: scale(0,0) translateY(-100%);
+            
+        }
+        .about:nth-child(1) {
+            /* background-color: aqua; */
+            grid-area: 3/5/8/7;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+            padding: 2%;
+            text-align: justify;
+            /* animation:scale 10s ease; */
+            /* flex-wrap: wrap; */
+
+        }
+        
+        .aboutAnimate
+        {
+            transform: scale(1,1) translateY(0);
+            transition: 4s ease;
+        }
+    
+        .about:nth-child(2) {
+            background-color: rgb(233, 233, 121);
+        }
+
+        .about:nth-child(3) {
+            background-color: yellow;
+        }
+
+         @media (max-width:1100px){
+            .about{
+                font-size: 1rem;
+                justify-items: first;
+            }
+         }
+         @media (max-width:550px)
+         {
+            .top-container,.about-container{
+                margin: 0;
+                width: 100%;
+            }
+            .about{
+                font-size: 10px;
+            }
+         }
+         .intro-animate{
+            animation: scale 5s ease;
+         }
+         .project-container{
+            height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(10,10%);
+            grid-template-rows: repeat(10,auto);
+            font-size: 1.5rem;
+            
+            /* align-items: end; */
+         }
+         .project-flex{
+            display: flex;
+            flex-direction: column;
+            /* align-items: end; */
+            justify-content: start;
+            gap:10px;
+            padding: 1rem;
+            border-radius: 2rem;
+            margin: 10px;
+            flex:1fr 1fr 1fr;
+            width: 100%;
+            position: relative;
+            border: 2px solid white;
+            /* transform:  translateX(-200%); */
+         }
+         .project:nth-child(1){
+            grid-area: 3/2/9/4;
+            background-color: #f8f3f7;
+            height: 100%;
+            
+         }
+         .project:nth-child(2)
+         {
+            grid-area: 3/5/9/7;
+            background-color: #f8f3f7;
+         }
+         .project:nth-child(3)
+         {
+            grid-area: 3/8/9/10;
+            background-color: #f8f3f7;
+         }
+         .project-flex img{
+            border-radius: 5%;
+            width: 100%;
+            height: 45%;
+            /* height: 183px; */
+            object-fit:fill;
+           
+            
+         }
+         .project-pos{
+            position: absolute;
+            bottom: 2rem;
+            font-weight: bolder;
+         }
+         .pro-content{
+            transform:scale(0) translateY(-100%);
+            transition:3s ease;
+            text-align: justify;
+         }
+         .project-animate{
+            transform: scale(1,1) translateY(0);
+            transition: 3s ease;
+         }
+         @media (max-width:1800px)
+         {
+            .project-flex{
+                font-size: 1rem;
+            }
+         }
+         .project-flex:hover{
+            background-color: #f76e48;
+            opacity: 0.6;
+            color: white
+         }
+         img:hover{
+            transform: scale();
+         }
+         @media (max-width:900px)
+         {
+            .project-container{
+                height: 100vh;
+               display: flex;
+               flex-direction: column;
+               flex: 1fr 1fr 1fr;
+            }
+            .project-flex{
+                font-size: 1rem;
+            }
+            body{
+                background-size: 400%;
+            }
+         }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="top-container mar-bor">
+            <div class="intro">
+                <p >Hi, I'm Priyanka Iliger</p>
+                <p >A Web Developer</p>
+                <p >Based in Hubballi</p>
+            </div>
+            <span class="intro"><a href="#about-section" id="linkabout">About /</a><a href="#project-section">Projects /</a><a href="#">Contact</a></span>
+            <div class="intro">
+                <a href="#project-section"><img src="project-logo.png" alt=""></a>
+            </div>
+        </div>
+        <div class="about-container mar-bor" id="about-section">
+            <div class="about">  
+                <div>I'm a full-stack web developer passionate in building and maintaining responsive websites. I have a solid understanding of front-end technologies like HTML, CSS, JavaScript, React and Vue.js, along with backend technologies such as Node.js and databases like MongoDB and MySQL.
+                    <br><br>
+                    My journey in web development started with a deep interest in how websites work, and over time, I honed my skills through various projects, from personal blogs to eCommerce platforms. What motivates me the most is solving real-world problems with clean, efficient code, and delivering seamless user experiences.
+                </div>
+            </div>
+            <div class="about"></div>
+            <!-- <div class="about"></div> -->
+            <!-- <p>I'm a full-stack web developer passionate in building and maintaining responsive websites. I have a solid understanding of front-end technologies like HTML, CSS, JavaScript, React and Vue.js,
+                 along with backend technologies such as Node.js and databases like MongoDB and MySQL.
+                My journey in web development started with a deep interest in how websites work, and over time, I honed my skills through various projects, from personal blogs to eCommerce platforms. What motivates me the most is solving real-world problems with clean, efficient code, and delivering seamless user experiences.
+            </p>
+            <p>Hello World</p> -->
+        </div>
+        <div class="project-container" id="project-section">
+                <div class="project project-flex">
+                    <img src="invoice.png" alt="">
+                    <p class="pro-content">Invoice software is utilized to generate professional
+                    invoices for products sold,facilitating efficient billing.It streamlines the invoicing process, ensuring accuracy.
+                    This project will streamline invoice processing, reduce manual errors, and provide businesses with a robust tool to manage their financial transactions.   </p>
+                    <p class="project-pos">Invoice Project</p>
+                </div>
+                <div class="project project-flex">
+                    <img src="budget-estimation.jpg" >
+                    <p class="pro-content"> It provides a simple and intuitive interface where users can input income, expenses, and financial goals. The software will automatically calculate estimated costs, generate reports,
+                        and offer data visualizations to support informed financial decision-making.This system helps users to input project details, calculate expected costs,
+                         and generate detailed budget reports.</p>
+                    <p class="project-pos">Budget Estimation</p>   
+                </div>
+                <div class="project project-flex"><img src="images.png" >
+                    <p class="pro-content">This Tic-Tac-Toe project is a simple yet engaging implementation of the classic two-player game where users can play against each other on a 3x3 grid. The project focuses on providing a clean and intuitive user interface, responsive interactions, 
+                        and robust game logic that handles turns, winning conditions, and game resets.
+                    </p>
+                    <p class="project-pos">Tic-Tac-Toe Game</p>
+                </div>     
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
