@@ -41,4 +41,3 @@ linkabout.addEventListener("click",()=>
 })
 
 let body=document.querySelector("");
-console.log("hi i am shweta s ...")
